@@ -35,9 +35,9 @@ Not sure if I want to keep Platonic elements or use Chinese or some other system
 | Air | - |Livonian Air | - | - |Sour Dust|Will-o'-Wisp|Chalk Dust|Air Dissolver|
 | Earth | - | - |Wrought Iron| - |Plumbago|Cinnibar|Natron|Earth Dissolver|
 | Fire |Oil of Vitriol| - | - |Phlogiston|Brimstone|Pitchblende|Ifrit Embers|Fire Dissolver|
-| Sulphur | | | | | | |Sulphur Dissolver|
+| Sulphur | | | | | | | |Sulphur Dissolver|
 | Mercury | | | | | | | |Mercury Dissolver|
-| Salt | | | | | | |Salt Dissolver|
+| Salt | | | | | | | |Salt Dissolver|
 | Void |Water Dissolver|Air Dissolver|Earth Dissolver|Fire Dissolver|Sulphur Dissolver|Mercury Dissolver|Salt Dissolver|Alkahest|
 
 
