@@ -31,7 +31,7 @@ Not sure if I want to keep Platonic elements or use Chinese or some other system
 
 | Table of Elements | Water | Air | Earth | Fire | Sulphur | Mercury | Salt | Void |
 |:------------------|:------|:----|:------|:-----|:--------|:--------|:-----|:-----|
-| Water |Korkyrian Water | | | | | | | |
+| Water |Korkyrian Water | | | |Naphtha|Quicksilver|Tears of Zo'ar| |
 | Air | | | | | | | | |
 | Earth | | | | | | | | | |
 | Fire | | | | | | | | | |
@@ -39,8 +39,7 @@ Not sure if I want to keep Platonic elements or use Chinese or some other system
 | Mercury | | | | | | | | | |
 | Salt | | | | | | | | | |
 | Void | | || | | | | | |
-Water
-Naphtha
+
 Quicksilver
 Tears of Zo'ar
 -
