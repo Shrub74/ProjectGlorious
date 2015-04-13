@@ -6,4 +6,4 @@ Axe**: Powerful, can cut through wood.**
 
 Hammer**: Powerful, can smash things**
 
-Martial Arts
+Martial Arts**: Powerful and quick. Can grapple, and lift things.**
