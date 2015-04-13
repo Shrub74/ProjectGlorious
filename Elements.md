@@ -29,6 +29,11 @@ Not sure if I want to keep Platonic elements or use Chinese or some other system
 
 ## Substances ##
 
+| Table of Elements | - |Water|Earth|Air|Fire|Sulphur|Mercury|Salt|Void|
+| - |
+| Water |
+| Earth |
+| Finish this Table off|
 Water
 Naphtha
 Quicksilver
