@@ -31,13 +31,13 @@ Not sure if I want to keep Platonic elements or use Chinese or some other system
 
 | Table of Elements | Water | Air | Earth | Fire | Sulphur | Mercury | Salt | Void |
 |:------------------|:------|:----|:------|:-----|:--------|:--------|:-----|:-----|
-| Water |Korkyrian Water | - | - |Oil of Vitriol|Naphtha|Quicksilver|Tears of Zo'ar| |
-| Air | - |Livonian Air | - | - |Sour Dust|Will-o'-Wisp|Chalk Dust| |
-| Earth | - | - |Wrought Iron| - |Plumbago|Cinnibar|Natron| | |
-| Fire |Oil of Vitriol| - | - |Phlogiston|Brimstone|Pitchblende|Ifrit Embers| | |
-| Sulphur | | | | | | | | |
-| Mercury | | | | | | | | | |
-| Salt | | | | | | | | | |
+| Water |Korkyrian Water | - | - |Oil of Vitriol|Naphtha|Quicksilver|Tears of Zo'ar|Water Dissolver |
+| Air | - |Livonian Air | - | - |Sour Dust|Will-o'-Wisp|Chalk Dust|Air Dissolver|
+| Earth | - | - |Wrought Iron| - |Plumbago|Cinnibar|Natron| |Earth Dissolver|
+| Fire |Oil of Vitriol| - | - |Phlogiston|Brimstone|Pitchblende|Ifrit Embers| |Fire Dissolver|
+| Sulphur | | | | | | | |Sulphur Dissolver|
+| Mercury | | | | | | | | |Mercury Dissolver|
+| Salt | | | | | | | | |Salt Dissolver|
 | Void |Water Dissolver|Air Dissolver|Earth Dissolver|Fire Dissolver|Sulphur Dissolver|Mercury Dissolver|Salt Dissolver|Alkahest|
 
 
