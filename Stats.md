@@ -23,3 +23,6 @@ Combination of Strength and Equipment stats
 
 ### Defense ###
 Combination of Strength and Equipment stats
+
+# Weapon Proficiency #
+Each weapon has proficiencies. Characters can level up proficiency by using weapons, similar to FF2.
