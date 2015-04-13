@@ -31,7 +31,7 @@ Not sure if I want to keep Platonic elements or use Chinese or some other system
 
 | Table of Elements | Water | Air | Earth | Fire | Sulphur | Mercury | Salt | Void |
 |:------------------|:------|:----|:------|:-----|:--------|:--------|:-----|:-----|
-| Water | | | | | | | | |
+| Water |Korkyrian Water | | | | | | | |
 | Air | | | | | | | | |
 | Earth | | | | | | | | | |
 | Fire | | | | | | | | | |
