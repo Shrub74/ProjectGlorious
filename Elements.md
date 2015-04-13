@@ -38,21 +38,13 @@ Not sure if I want to keep Platonic elements or use Chinese or some other system
 | Sulphur | | | | | | | | |
 | Mercury | | | | | | | | | |
 | Salt | | | | | | | | | |
-| Void | | || | | | | | |
+| Void |Water Dissolver|Air Dissolver|Earth Dissolver|Fire Dissolver| | | | |Alkahest|
 
 
--
--
-Oil of Vitriol
--
--
--
+
 Bottled Aether
-Alkahest
-Water Dissolver
-Air Dissolver
-Earth Dissolver
-Fire Dissolver
+
+
 Earth, Wind & Fire
 Steamy Earth
 Steam Air
