@@ -31,22 +31,16 @@ Not sure if I want to keep Platonic elements or use Chinese or some other system
 
 | Table of Elements | Water | Air | Earth | Fire | Sulphur | Mercury | Salt | Void |
 |:------------------|:------|:----|:------|:-----|:--------|:--------|:-----|:-----|
-| Water |Korkyrian Water | | | |Naphtha|Quicksilver|Tears of Zo'ar| |
+| Water |Korkyrian Water | | |Oil of Vitriol|Naphtha|Quicksilver|Tears of Zo'ar| |
 | Air | |Livonian Air | | |Sour Dust|Will-o'-Wisp|Chalk Dust| |
 | Earth | | |Wrought Iron| |Plumbago|Cinnibar|Natron| | |
-| Fire | | | |Phlogiston|Brimstone|Pitchblende|Ifrit Embers| | |
+| Fire |Oil of Vitriol| | |Phlogiston|Brimstone|Pitchblende|Ifrit Embers| | |
 | Sulphur | | | | | | | | |
 | Mercury | | | | | | | | | |
 | Salt | | | | | | | | | |
 | Void | | || | | | | | |
 
-Plumbago
-Mercurial Earth
-Natron
-Phlogiston
-Brimstone
-Pitchblende
-Ifrit Embers
+
 -
 -
 Oil of Vitriol
