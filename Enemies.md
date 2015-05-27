@@ -39,3 +39,15 @@ Uncommon
 
 ### Skeletomorphs ###
 Lots of different morphs of skeletons. Four-legged skeletons with lances.
+
+### Resurrectionist ###
+Victorian-Styled Body Exhumer
+
+### Plague Doctor ###
+Medieval Era Plague Doctor Aesthetic
+
+### Galvanist ###
+Roboticist/Electricist.
+
+### Stone Snake ###
+A snake made of stone
