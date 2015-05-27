@@ -36,3 +36,6 @@ Enemy that can turn invisible, acts as a tougher enemy.
 Fast and Strong.
 
 Uncommon
+
+### Skeletomorphs ###
+Lots of different morphs of skeletons. Four-legged skeletons with lances.
