@@ -23,6 +23,9 @@ Generic Ice Cavern. Try to be very fun. Try to avoid slippy-ice as a gimmick.
 ### Old Castle ###
 An old castle dungeon (an actual dungeon) to explore
 
+### Clockwork Dungeon ###
+Clockwork dungeon, many puzzles and traps and steampunk aesthetic.
+
 ### Boneyard ###
 Highly Gothic-flavoured dungeon, possibly starts in a cemetery, tombs, catacombs. Lots of undead enemies.
 Boss: [Der Ritter](Bosses#Der_Ritter.md)
