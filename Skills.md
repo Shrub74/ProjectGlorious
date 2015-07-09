@@ -10,6 +10,7 @@ Hopefully will have 24 or 32 skills without being too congestive
 - Skills should affect the probability of personal loot, making loot occur more in favour of a player's current skills, eg, having Demolitions would increase the rate at which you loot bombs.
 - Having a full set of related skills, eg, Magic or Rogue skills, affords a Set bonus to those skills.
 - Skills are represented by inventory items as well
+- Using a non-combat skill key will open a relevant context menu for that skill. Holding a certain key will open a relevant context menu for a combat skill, as well.
 
 # List #
 
