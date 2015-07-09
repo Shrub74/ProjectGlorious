@@ -7,6 +7,7 @@ Hopefully will have 24 or 32 skills without being too congestive
 9/8/15: 
 - 28 skills sounds like a good amount
 - Skills will bind to 4 skill keys, which on an XBOX controller would be ABXY, on Keyboard, ZXCV, while weapon would be Right Trigger or Space or Click.
+- Skills should affect the probability of personal loot, making loot occur more in favour of a player's current skills, eg, having Demolitions would increase the rate at which you loot bombs.
 
 # List #
 
@@ -30,7 +31,8 @@ Hopefully will have 24 or 32 skills without being too congestive
 
 ### Physical Skills ###
   * **Digging**: Allows digging of dirt (maybe?)
-  * **Tumbling**: Throw other players
+  * **Tumbling**: Jump further and higher, contort.
+  * **Strongmanship**: Lift heavy objects and other players 
 
 ### Combat Skills ###
   * Things Coral
@@ -46,3 +48,6 @@ Hopefully will have 24 or 32 skills without being too congestive
   * **Born Fighter**: Makes critical hits more common
   * **Perceptive**: Makes minute details more visible
   * **Lucky**: Increases the chance of finding better items
+
+### Unsorted Ideas ###
+* **Demolitions**: Skill with explosives. Makes explosions happen on time, without mishaps. Without the Demolitions skill, use of explosives can be erratic, with premature explosions or explosions not happening at all.
