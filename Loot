@@ -1,4 +1,4 @@
 - Loot can be dropped from monsters or gained from containers
 - Loot can also be traded for with dungeon merchants
 - Loot gained will be different for each player, not from a pool.
-- Monsters will drop the same loot four times for everybody. (use a VisibleTo switch for this)
+- Monsters will drop the same loot four times for everybody. (use a VisibleTo variable for this)
