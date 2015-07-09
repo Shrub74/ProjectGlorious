@@ -4,6 +4,10 @@ Not sure about subskills, currently. Need to work out a way to level things and 
 
 Hopefully will have 24 or 32 skills without being too congestive
 
+9/8/15: 
+- 28 skills sounds like a good amount
+- Skills will bind to 4 skill keys, which on an XBOX controller would be ABXY, on Keyboard, ZXCV, while weapon would be Right Trigger or Space or Click.
+
 # List #
 
 ### Magical Skills ###
