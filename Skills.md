@@ -8,6 +8,7 @@ Hopefully will have 24 or 32 skills without being too congestive
 - 28 skills sounds like a good amount
 - Skills will bind to 4 skill keys, which on an XBOX controller would be ABXY, on Keyboard, ZXCV, while weapon would be Right Trigger or Space or Click.
 - Skills should affect the probability of personal loot, making loot occur more in favour of a player's current skills, eg, having Demolitions would increase the rate at which you loot bombs.
+- Having a full set of related skills, eg, Magic or Rogue skills, affords a Set bonus to those skills.
 
 # List #
 
