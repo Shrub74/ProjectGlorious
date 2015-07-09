@@ -1,0 +1,7 @@
+- When a character reaches 0 HP, they will faint.
+- A fainted character cannot interact until revived
+- Revival will happen at either the next floor, or the next checkpoint
+- Some items can revive a fainted comrade
+- If all players faint, then they either restart the dungeon, or all revive at the previous checkpoint/rope hole. 
+- Checkpoints may happen every 5 floors or so.
+- Player will lose any inventory they collect on that floor if they faint. They may collect it if they revive on that floor.
