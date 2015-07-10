@@ -43,6 +43,8 @@ Hopefully will have 24 or 32 skills without being too congestive
 
 ### Combat Skills ###
   * **Veteran**: Adds an extra point to base damage
+  * **Guarded**: Adds an extra point to base defense
+  * **Focus**: Adds an extra point to damage and defense temporarily. Cooldown is every floor.
 
 ### Intellectual Traits ###
   * **Polyglot**: Allows translation of other languages/scrolls
