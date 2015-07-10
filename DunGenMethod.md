@@ -1,11 +1,18 @@
 Dungeons are the levels in the game. They consist of floors, which are stages of the level.
 
-Dungeon structures will include at least 1 of everything on this list.
+Dungeon structures will include at least 1 of everything on this list:
+
 1) Opening floor/Dungeon entrance
+
 2) Enemy/Puzzle Floors
+
 3) Intermediary Boss/es
+
 4) Treasure rooms
+
 5) Final boss
+
+
 
 Tenets:
 
@@ -18,11 +25,19 @@ Tenets:
 4) 
 
 
-Method
+
+Method:
+
 1. Floor size is decided
+ 
 2. Bottleneck puzzles are made
+ 
 3. The basic framework is laid out, two or more stairs rooms are made
+ 
 4. More puzzles rooms are made
+
 5. Treasure rooms are made depending on the puzzle rooms
+
 6. Hallways are made
+
 7. Hallway barriers are calculated
