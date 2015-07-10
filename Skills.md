@@ -12,6 +12,10 @@ Hopefully will have 24 or 32 skills without being too congestive
 - Skills are represented by inventory items as well
 - Using a non-combat skill key will open a relevant context menu for that skill. Holding a certain key will open a relevant context menu for a combat skill, as well.
 
+10/8/15:
+- Some skills have cooldown based on their combat/puzzle effectiveness
+- Some skills can have items that affect them, like extra spells
+
 # List #
 
 ### Magical Skills ###
