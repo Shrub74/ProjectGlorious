@@ -42,7 +42,7 @@ Hopefully will have 24 or 32 skills without being too congestive
   * **Strongmanship**: Lift heavy objects and other players 
 
 ### Combat Skills ###
-  * Things Coral
+  * **Veteran**: Adds an extra point to base damage
 
 ### Intellectual Traits ###
   * **Polyglot**: Allows translation of other languages/scrolls
