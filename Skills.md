@@ -48,7 +48,6 @@ Hopefully will have 24 or 32 skills without being too congestive
   * **Polyglot**: Allows translation of other languages/scrolls
   * **Haggle**: Better prices from merchants
   * **Scholar**: Allows identification of unknown items
-  * **Navigation**: Shows a certain way through the dungeon (possible set of different icons above passageways)
 
 ### Character Traits ###
   * **Accurate**: Makes damage and crits more likely and higher for ranged
@@ -58,3 +57,5 @@ Hopefully will have 24 or 32 skills without being too congestive
 
 ### Unsorted Ideas ###
 * **Demolitions**: Skill with explosives. Makes explosions happen on time, without mishaps. Without the Demolitions skill, use of explosives can be erratic, with premature explosions or explosions not happening at all.
+  * **Cartography**: Reveals a skeleton map of the dungeon at the beginning of a floor
+  * **Sense of Danger**: Shows a danger rating of a room happening, can show boss rooms maybe
