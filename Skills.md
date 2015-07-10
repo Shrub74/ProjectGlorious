@@ -27,7 +27,7 @@ Hopefully will have 24 or 32 skills without being too congestive
 ### Support Skills ###
   * **Time Magic**: Cast spells that give buffs to friends and downers to enemies
   * **Healing**: Heals your team
-  * **Cooking**: Allows creation of food and medicine (maybe?)
+  * **Cooking**: Allows creation of foods
   * **Alchemy**: Allows mixing of ingredients for buffs and help
 
 ### Technical Skills ###
