@@ -1,7 +1,20 @@
+Dungeons are the levels in the game. They consist of floors, which are stages of the level.
+
+Dungeon structures will include at least 1 of everything on this list.
+1) Opening floor/Dungeon entrance
+2) Enemy/Puzzle Floors
+3) Intermediary Boss/es
+4) Treasure rooms
+5) Final boss
+
 Tenets:
+
 1) There will always be a way through the dungeon.
+
 2) The dungeon will always include a necessary skill from each character at some point.
+
 3) The dungeon will dynamically change based on number of players.
+
 4) 
 
 
