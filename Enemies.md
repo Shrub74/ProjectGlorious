@@ -1,3 +1,5 @@
+10/7/15: Enemies should increase in difficulty gently down floors. Higher level enemies should appear scarcely, then increase in number over floors.
+
 ## Enemy Colours/Levels ##
 
 By level:
