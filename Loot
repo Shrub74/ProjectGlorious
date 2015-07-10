@@ -2,3 +2,4 @@
 - Loot can also be traded for with dungeon merchants
 - Loot gained will be different for each player, not from a pool.
 - Monsters will drop the same loot four times for everybody. (use a VisibleTo variable for this)
+- At the end of dungeons, loot can be unlocked for further unlocking in dungeons, a la Binding of Isaac.
