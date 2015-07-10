@@ -51,8 +51,8 @@ Hopefully will have 24 or 32 skills without being too congestive
   * **Navigation**: Shows a certain way through the dungeon (possible set of different icons above passageways)
 
 ### Character Traits ###
-  * **Accurate**: Makes swords swing better and arrows fly better (maybe?)
-  * **Born Fighter**: Makes critical hits more common
+  * **Accurate**: Makes damage and crits more likely and higher for ranged
+  * **Born Fighter**: Makes critical hits more common for melee
   * **Perceptive**: Makes minute details more visible
   * **Lucky**: Increases the chance of finding better items
 
