@@ -11,3 +11,5 @@
 6) Items should directly benefit the player and not the character.
 
 7) Avoid avatar strength, give the player strength.
+
+8) Dungeons should adjust to the current state of the party.
