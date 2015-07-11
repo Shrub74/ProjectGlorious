@@ -1,0 +1,12 @@
+Upon the server being booted, or host beginning a game (depending on implementation, hopefully both),
+a character screen will be shown. This will have the design of 4 squares in each corner showing a player's initial status screen.
+There will also be a screen in the middle or the bottom showing the selected Dungeon and it's settings (difficulty, etc.)
+
+
+Each individual character screen will need to show:
+- The player character's down-facing sprite
+- The character's stat roll
+- The character's chosen skills and weapon
+- Other assorted things like options and controls
+
+This may require a tabbed window.
