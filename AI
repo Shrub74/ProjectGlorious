@@ -1,0 +1,8 @@
+Enemy AI will be governed by enemy type, most common enemies will have standard game AI, such as Approaching, Stationary, 
+Set Paths, and other simple movements
+
+Boss AI incl. Miniboss AI, will be governed by a series of sliders, which describe their own skill in certain attributes, eg:
+- Projectile Dodging
+- Use of Cover
+- Bravery
+- Other such things
