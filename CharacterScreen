@@ -5,7 +5,7 @@ There will also be a screen in the middle or the bottom showing the selected Dun
 
 Each individual character screen will need to show:
 - The player character's down-facing sprite
-- The character's stat roll
+- The character's [stat roll](Stats)
 - The character's chosen skills and weapon
 - Other assorted things like options and controls
 
