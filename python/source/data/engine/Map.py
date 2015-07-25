@@ -4,6 +4,8 @@
 #
 #-------------------------------------------------------------------------------
 
+from random import randint
+
 class Map(object):
     """
     This is the map object that gets written to the game layers
@@ -31,6 +33,26 @@ class Map(object):
         Writes the DunGen output to the map instance
         """
         pass
+
+    def loadTest(self):
+        y = 1
+        asciimap = ['XXXXXXXX',
+                    'XX.....X',
+                    'X.XXXX.X',
+                    'X......X',
+                    'X......X',
+                    'X......X',
+                    'X....X.X',
+                    'XXXXXXXX']
+        
+        for line in asciimap:
+            for x in range(0, len(line)):
+                if line[x] == 'X':
+                    self.WallList.append((x,y))
+                if line[x] == '.':
+                    self.FloorList.append((x,y))
+            y = y + 1
+
 
     def generateTest(self):
         print('Generating Test')

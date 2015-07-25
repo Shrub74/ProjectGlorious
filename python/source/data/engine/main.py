@@ -8,8 +8,9 @@ import pygame, sys
 from pygame.locals import *
 from player import *
 from skills import *
-from environment import *
 from Map import *
+from environment import *
+from wall import *
 
 RESOLUTION = (1024, 768)
 FPS = 30
@@ -24,6 +25,7 @@ class MainGame(object):
         pygame.init()
         # Create FPS clock
         self.clock = pygame.time.Clock()
+        self.showFPS = False
 
         # Create screen
         self.screen = pygame.display.set_mode(RESOLUTION)
@@ -33,19 +35,29 @@ class MainGame(object):
         self.tileLayer = pygame.Surface(RESOLUTION)
         #self.objectLayer = pygame.Surface(RESOLUTION)
         self.spriteLayer = pygame.Surface(RESOLUTION)
-        #self.hudLayer = pygame.Surface(RESOLUTION)
+        self.hudLayer = pygame.Surface(RESOLUTION)
         #self.textLayer = pygame.Surface(RESOLUTION)
 
         self.tileLayer.set_colorkey((1, 1, 1))
         self.spriteLayer.set_colorkey((1, 1, 1))
+        self.hudLayer.set_colorkey((1, 1, 1))
 
         # Create Map with size 16
-        self.map = Map(16)
-        self.map.generateTest()
+        self.map = Map(8)
+        #self.map.generateTest()
+        self.map.loadTest()
+
+        self.font = pygame.font.Font(None, 32)
+
+        # Create Wall objects from map walllist
+        self.WallList = []
+        for pos in self.map.WallList:
+            wall = pygame.Rect(((pos[0]-1)*32, (pos[1]-1)*32), (32, 32))
+            self.WallList.append(wall)
+
         self.origin = ((RESOLUTION[0]/2) - (self.map.size*32 / 2),
                        (RESOLUTION[1]/2) - (self.map.size*32 / 2))
-        self.scrollspeed = 5
-        self.screenlock = False
+        
 
         # Initialise object lists
         self.TileArray = []
@@ -59,8 +71,10 @@ class MainGame(object):
         self.PlayerGraphic = pygame.image.load('warrior.png')
         self.PlayerGraphic.convert_alpha(self.spriteLayer)
 
+        pygame.key.set_repeat(1, 20)
+
         # Create player sprite
-        self.player = Player(1, (self.map.size/2, self.map.size/2))
+        self.player = Player(1, ((self.map.size/2) * 32, (self.map.size/2)*32))
         self.SpriteList.append(self.player)
 
         # Set MainLoop switch
@@ -90,17 +104,49 @@ class MainGame(object):
             if event.type == KEYDOWN:
                 # Movement Keys
                 if event.key == K_UP:
-                    if (self.player.pos[0], self.player.pos[1] - 1) not in self.map.WallList:
+                    ghostRect = self.player.rect.move(0, -self.player.speed)
+                    canMove = True
+                    for wall in self.WallList:
+                        if ghostRect.colliderect(wall):
+                            canMove = False
+                            pos = wall.y + 32
+                    if canMove:
                         self.player.moveUp()
+                    else:
+                        self.player.rect.y = pos
                 if event.key == K_DOWN:
-                    if (self.player.pos[0], self.player.pos[1] + 1) not in self.map.WallList:
+                    ghostRect = self.player.rect.move(0, self.player.speed)
+                    canMove = True
+                    for wall in self.WallList:
+                        if ghostRect.colliderect(wall):
+                            canMove = False
+                            pos = wall.y - 30
+                    if canMove:
                         self.player.moveDown()
+                    else:
+                        self.player.rect.y = pos
                 if event.key == K_LEFT:
-                    if (self.player.pos[0] - 1, self.player.pos[1]) not in self.map.WallList:
+                    ghostRect = self.player.rect.move(-self.player.speed, 0)
+                    canMove = True
+                    for wall in self.WallList:
+                        if ghostRect.colliderect(wall):
+                            canMove = False
+                            pos = wall.x + 34
+                    if canMove:
                         self.player.moveLeft()
+                    else:
+                        self.player.rect.x = pos
                 if event.key == K_RIGHT:
-                    if (self.player.pos[0] + 1, self.player.pos[1]) not in self.map.WallList:
+                    ghostRect = self.player.rect.move(self.player.speed, 0)
+                    canMove = True
+                    for wall in self.WallList:
+                        if ghostRect.colliderect(wall):
+                            canMove = False
+                            pos = wall.x - 28
+                    if canMove:
                         self.player.moveRight()
+                    else:
+                        self.player.rect.x = pos
 
                 # Weapon
                 if event.key == K_SPACE:
@@ -115,6 +161,9 @@ class MainGame(object):
                     pass
                 if event.key == K_f:
                     pass
+
+                if event.key == K_F9:
+                    self.showFPS = not self.showFPS
                 
     def update(self):
         if self.currentScreen == 0:
@@ -126,22 +175,13 @@ class MainGame(object):
         if self.currentScreen == 3:
             pass
 
-        if not self.screenlock:
-            self.mousepos = pygame.mouse.get_pos()
-            if self.mousepos[0] > (RESOLUTION[0] - (RESOLUTION[0] * 0.05)):
-                self.origin = (self.origin[0] - self.scrollspeed, self.origin[1])
-            if self.mousepos[1] > (RESOLUTION[1] - (RESOLUTION[1] * 0.05)):
-                self.origin = (self.origin[0], self.origin[1] - self.scrollspeed)
-            if self.mousepos[0] < (RESOLUTION[0] * 0.05):
-                self.origin = (self.origin[0] + self.scrollspeed, self.origin[1])
-            if self.mousepos[1] < (RESOLUTION[1] * 0.05):
-                self.origin = (self.origin[0], self.origin[1] + self.scrollspeed)
     
     def draw(self):
         # Refresh screen into black
         self.screen.fill([0, 0, 0])
         self.tileLayer.fill([1, 1, 1])
         self.spriteLayer.fill([1, 1, 1])
+        self.hudLayer.fill([1, 1, 1])
 
         for this in self.SpriteList:
             this.draw()
@@ -160,12 +200,19 @@ class MainGame(object):
                    (self.origin[1] + (tile[1] - 1) * 32))
             self.tileLayer.blit(self.FloorGraphic, pos)
 
-        pos = ((self.origin[0] + (self.player.pos[0] - 1) * 32),
-               (self.origin[1] + (self.player.pos[1] - 1) * 32))
+        # Draw player
+        pos = ((self.origin[0] + (self.player.rect[0] - 4)),
+               (self.origin[1] + (self.player.rect[1] - 4)))
         self.spriteLayer.blit(self.PlayerGraphic, pos)
 
+        if self.showFPS:
+            fps = str(int(self.clock.get_fps()))
+            self.hudLayer.blit(self.font.render(fps, True, [255, 255, 255]),
+                               (8, 8))
+        
         self.screen.blit(self.tileLayer, (0,0))
         self.screen.blit(self.spriteLayer, (0,0))
+        self.screen.blit(self.hudLayer, (0, 0))
         
         pygame.display.update()
         
@@ -178,6 +225,5 @@ class Connection(object):
     def __init__(self, cid):
         pass
         
-
 game = MainGame()
 game.MainLoop()
