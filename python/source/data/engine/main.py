@@ -13,7 +13,7 @@ from environment import *
 from wall import *
 
 RESOLUTION = (1024, 768)
-FPS = 30
+FPS = 60
 SPLASH_SCREEN = 0
 MAIN_MENU = 1
 GAME_SCREEN = 2
@@ -43,11 +43,11 @@ class MainGame(object):
         self.hudLayer.set_colorkey((1, 1, 1))
 
         # Create Map with size 16
-        self.map = Map(8)
+        self.map = Map(8, 'demotileset.png')
         #self.map.generateTest()
         self.map.loadTest()
 
-        self.font = pygame.font.Font(None, 32)
+        self.font = pygame.font.Font('freesansbold.ttf', 32)
 
         # Create Wall objects from map walllist
         self.WallList = []
@@ -64,10 +64,10 @@ class MainGame(object):
         self.ObjectList = []
         self.SpriteList = []
 
-        self.WallGraphic = pygame.image.load('wall.png')
-        self.WallGraphic.convert_alpha(self.tileLayer)
-        self.FloorGraphic = pygame.image.load('floor.png')
-        self.FloorGraphic.convert_alpha(self.tileLayer)
+#        self.WallGraphic = pygame.image.load('wall.png')
+#        self.WallGraphic.convert_alpha(self.tileLayer)
+#        self.FloorGraphic = pygame.image.load('floor.png')
+#        self.FloorGraphic.convert_alpha(self.tileLayer)
         self.PlayerGraphic = pygame.image.load('warrior.png')
         self.PlayerGraphic.convert_alpha(self.spriteLayer)
 
@@ -193,12 +193,12 @@ class MainGame(object):
             # Screen position is the Map Origin, plus the Map Co-ordinate
             pos = ((self.origin[0] + (tile[0] - 1) * 32),
                    (self.origin[1] + (tile[1] - 1) * 32))
-            self.tileLayer.blit(self.WallGraphic, pos)
+            self.tileLayer.blit(self.map.tiles[1], pos)
 
         for tile in self.map.FloorList:
             pos = ((self.origin[0] + (tile[0] - 1) * 32),
                    (self.origin[1] + (tile[1] - 1) * 32))
-            self.tileLayer.blit(self.FloorGraphic, pos)
+            self.tileLayer.blit(self.map.tiles[0], pos)
 
         # Draw player
         pos = ((self.origin[0] + (self.player.rect[0] - 4)),
@@ -219,6 +219,9 @@ class MainGame(object):
     def quitGame(self):
         pygame.quit()
         sys.exit()
+
+    def load_map(self):
+        pass
 
 
 class Connection(object):
