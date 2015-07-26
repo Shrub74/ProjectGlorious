@@ -1,0 +1,1 @@
+python zip.py py2exe
