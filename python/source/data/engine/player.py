@@ -8,6 +8,7 @@ class Player(object):
         self.skills = [0, 0, 0, 0]
         self.attacking = False
         self.speed = 3
+        self.inventory = []
     def update(self):
         pass
     def draw(self):

@@ -21,6 +21,11 @@ class Map(object):
         # Wall and Floor Lists are just co-ordinate lists for the draw function
         self.WallList = []
         self.FloorList = []
+        self.KeyList = []
+        self.DoorList = []
+        self.ChestList = []
+        self.DownstairsList = []
+        self.UpstairsList = []
 
         # Object and Sprite lists are lists of objects
         self.ObjectList = []
@@ -45,9 +50,9 @@ class Map(object):
                     'X..............X X.X',
                     'X......XXXXXXX.X XXX',
                     'X......X.....X.X',
-                    'X......X.X...X.X',
-                    'X......X.XXXXX.XXXXX',
-                    'X......X...........X',
+                    'X......X.X.K.X.X',
+                    'X..<...X.XXXXX.XXXXX',
+                    'X......X.......D..>X',
                     'XXXXXXXXXXXXXXXXXXXX',
                     'XXXXXXXXXXXXXXXXXXXX']
         
@@ -57,8 +62,22 @@ class Map(object):
                     self.WallList.append((x,y))
                 if line[x] == '.':
                     self.FloorList.append((x,y))
-            y = y + 1
+                if line[x] == 'K':
+                    self.KeyList.append((x,y))
+                    self.FloorList.append((x,y))
+                if line[x] == 'D':
+                    self.DoorList.append((x,y))
+                    self.FloorList.append((x,y))
+                if line[x] == '<':
+                    self.UpstairsList.append((x,y))
+                    self.FloorList.append((x,y))
+                if line[x] == '>':
+                    self.DownstairsList.append((x,y))
+                if line[x] == 'C':
+                    self.ChestList.append((x,y))
+                    self.FloorList.append((x,y))
 
+            y = y + 1
 
     def generateTest(self):
         print('Generating Test')

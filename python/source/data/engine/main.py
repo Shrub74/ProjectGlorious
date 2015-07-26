@@ -10,7 +10,6 @@ from player import *
 from skills import *
 from Map import *
 from environment import *
-from wall import *
 
 RESOLUTION = (1024, 768)
 FPS = 60
@@ -33,7 +32,7 @@ class MainGame(object):
 
         # Create surfaces
         self.tileLayer = pygame.Surface(RESOLUTION)
-        #self.objectLayer = pygame.Surface(RESOLUTION)
+        self.objectLayer = pygame.Surface(RESOLUTION)
         self.spriteLayer = pygame.Surface(RESOLUTION)
         self.hudLayer = pygame.Surface(RESOLUTION)
         #self.textLayer = pygame.Surface(RESOLUTION)
@@ -41,6 +40,7 @@ class MainGame(object):
         self.tileLayer.set_colorkey((1, 1, 1))
         self.spriteLayer.set_colorkey((1, 1, 1))
         self.hudLayer.set_colorkey((1, 1, 1))
+        self.objectLayer.set_colorkey((1, 1, 1))
 
         # Create Map with size 16
         self.map = Map(8, 'demotileset.png')
@@ -51,18 +51,33 @@ class MainGame(object):
 
         # Create Wall objects from map walllist
         self.WallList = []
-        for pos in self.map.WallList:
-            wall = pygame.Rect(((pos[0]-1)*32, (pos[1]-1)*32), (32, 32))
-            self.WallList.append(wall)
-
-        self.origin = ((RESOLUTION[0]/2) - (self.map.size*32 / 2),
-                       (RESOLUTION[1]/2) - (self.map.size*32 / 2))
-        
-
         # Initialise object lists
         self.TileArray = []
         self.ObjectList = []
         self.SpriteList = []
+        for pos in self.map.WallList:
+            wall = pygame.Rect(((pos[0]-1)*32, (pos[1]-1)*32), (32, 32))
+            self.WallList.append(wall)
+
+        # Objects
+        for pos in self.map.KeyList:
+            key = Key(((pos[0] - 1) * 32, (pos[1] - 1) * 32))
+            self.ObjectList.append(key)
+        for pos in self.map.DoorList:
+            door = Door(((pos[0] - 1) * 32, (pos[1] - 1) * 32), False)
+            self.ObjectList.append(door)
+        for pos in self.map.ChestList:
+            chest = Container(((pos[0] - 1) * 32, (pos[1] - 1) * 32), 0)
+            self.ObjectList.append(chest)
+        for pos in self.map.UpstairsList:
+            upstairs = Stairs(((pos[0] - 1) * 32, (pos[1] - 1) * 32), True)
+            self.ObjectList.append(upstairs)
+        for pos in self.map.DownstairsList:
+            downstairs = Stairs(((pos[0] - 1) * 32, (pos[1] - 1) * 32), False)
+            self.ObjectList.append(downstairs)
+
+        self.origin = ((RESOLUTION[0]/2) - (self.map.size*32 / 2),
+                       (RESOLUTION[1]/2) - (self.map.size*32 / 2))
 
 #        self.WallGraphic = pygame.image.load('wall.png')
 #        self.WallGraphic.convert_alpha(self.tileLayer)
@@ -174,19 +189,23 @@ class MainGame(object):
             pass
         if self.currentScreen == 3:
             pass
-
+        
+        for obj in self.ObjectList:
+            if obj.update(self.player) == 'del':
+                self.ObjectList.remove(obj)
     
     def draw(self):
         # Refresh screen into black
         self.screen.fill([0, 0, 0])
         self.tileLayer.fill([1, 1, 1])
+        self.objectLayer.fill([1, 1, 1])
         self.spriteLayer.fill([1, 1, 1])
         self.hudLayer.fill([1, 1, 1])
 
-        for this in self.SpriteList:
-            this.draw()
-        for this in self.ObjectList:
-            this.draw()
+        #for this in self.SpriteList:
+        #    this.draw()
+        #for this in self.ObjectList:
+        #    this.draw()
 
         # Draw map
         for tile in self.map.WallList:
@@ -200,6 +219,11 @@ class MainGame(object):
                    (self.origin[1] + (tile[1] - 1) * 32))
             self.tileLayer.blit(self.map.tiles[0], pos)
 
+        for obj in self.ObjectList:
+            pos = ((self.origin[0] + (obj.rect[0] - 1)),
+                   (self.origin[1] + (obj.rect[1] - 1)))
+            self.objectLayer.blit(self.map.tiles[obj.tile], pos)
+
         # Draw player
         pos = ((self.origin[0] + (self.player.rect[0] - 4)),
                (self.origin[1] + (self.player.rect[1] - 4)))
@@ -211,6 +235,7 @@ class MainGame(object):
                                (8, 8))
         
         self.screen.blit(self.tileLayer, (0,0))
+        self.screen.blit(self.objectLayer, (0,0))
         self.screen.blit(self.spriteLayer, (0,0))
         self.screen.blit(self.hudLayer, (0, 0))
         
