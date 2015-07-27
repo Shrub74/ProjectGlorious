@@ -25,6 +25,7 @@ class MainGame(object):
         # Create FPS clock
         self.clock = pygame.time.Clock()
         self.showFPS = False
+        self.ticker = 0
 
         # Create screen
         self.screen = pygame.display.set_mode(RESOLUTION)
@@ -79,17 +80,10 @@ class MainGame(object):
         self.origin = ((RESOLUTION[0]/2) - (self.map.size*32 / 2),
                        (RESOLUTION[1]/2) - (self.map.size*32 / 2))
 
-#        self.WallGraphic = pygame.image.load('wall.png')
-#        self.WallGraphic.convert_alpha(self.tileLayer)
-#        self.FloorGraphic = pygame.image.load('floor.png')
-#        self.FloorGraphic.convert_alpha(self.tileLayer)
-        self.PlayerGraphic = pygame.image.load('warrior.png')
-        self.PlayerGraphic.convert_alpha(self.spriteLayer)
-
         pygame.key.set_repeat(1, 20)
 
         # Create player sprite
-        self.player = Player(1, ((self.map.size/2) * 32, (self.map.size/2)*32))
+        self.player = Player(1, ((self.map.size/2) * 32, (self.map.size/2)*32), 'player.png')
         self.SpriteList.append(self.player)
 
         # Set MainLoop switch
@@ -193,6 +187,12 @@ class MainGame(object):
         for obj in self.ObjectList:
             if obj.update(self.player) == 'del':
                 self.ObjectList.remove(obj)
+
+        self.player.update()
+
+        self.ticker += 1
+        if self.ticker == 60:
+            self.ticker = 0
     
     def draw(self):
         # Refresh screen into black
@@ -227,7 +227,7 @@ class MainGame(object):
         # Draw player
         pos = ((self.origin[0] + (self.player.rect[0] - 4)),
                (self.origin[1] + (self.player.rect[1] - 4)))
-        self.spriteLayer.blit(self.PlayerGraphic, pos)
+        self.spriteLayer.blit(self.player.getFrame(self.ticker), pos)
 
         if self.showFPS:
             fps = str(int(self.clock.get_fps()))

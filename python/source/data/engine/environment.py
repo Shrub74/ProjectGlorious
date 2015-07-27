@@ -22,8 +22,10 @@ class Key(object):
     def __init__(self, pos):
         self.rect = pygame.Rect((pos[0], pos[1]), (24, 24))
         self.tile = 7
+        self.sound = pygame.mixer.Sound('key.wav')
     def update(self, player):
         if self.rect.colliderect(player.rect):
+            self.sound.play()
             player.inventory.append(1)
             return 'del'
     def draw(self):
@@ -34,6 +36,7 @@ class Door(object):
         self.rect = pygame.Rect((pos, (32, 32)))
         self.locked = locked
         self.tile = 4
+        self.sound = pygame.mixer.Sound('door.wav')
     def openDoor(self, player):
         # Method for dealing with the opening of the door
         if 'lockpick' in player.skills:
@@ -43,6 +46,7 @@ class Door(object):
     def update(self, player):
         if self.rect.colliderect(player.rect):
             if self.openDoor(player):
+                self.sound.play()
                 return 'del'
     def draw(self):
         pass
