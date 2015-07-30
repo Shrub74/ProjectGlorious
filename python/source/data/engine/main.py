@@ -5,6 +5,7 @@
 #-------------------------------------------------------------------------------
 
 import pygame, sys
+import random
 from pygame.locals import *
 from player import *
 from skills import *
@@ -83,7 +84,20 @@ class MainGame(object):
         pygame.key.set_repeat(1, 20)
 
         # Create player sprite
-        self.player = Player(1, ((self.map.size/2) * 32, (self.map.size/2)*32), 'player.png')
+        print(self.map.UpstairsList)
+        pos = ((self.map.UpstairsList[0][0] - 1) * 32,
+               (self.map.UpstairsList[0][1] - 1) * 32)
+        modifier = random.randint(0,3)
+        print(modifier)
+        if modifier == 0:
+            pos = (pos[0], pos[1] - 32)
+        if modifier == 1:
+            pos = (pos[0] - 32, pos[1])
+        if modifier == 2:
+            pos = (pos[0] + 32, pos[1])
+        if modifier == 3:
+            pos = (pos[0], pos[1] + 32)
+        self.player = Player(1, pos, 'player.png')
         self.SpriteList.append(self.player)
 
         # Set MainLoop switch
@@ -193,6 +207,11 @@ class MainGame(object):
         self.ticker += 1
         if self.ticker == 60:
             self.ticker = 0
+
+        if self.player.rect.x + self.origin[0] > (1024 - 128):
+            self.origin = (self.origin[0] - 1, self.origin[1])
+        if self.player.rect.x + self.origin[0] < (128):
+            self.origin = (self.origin[0] + 1, self.origin[1])
     
     def draw(self):
         # Refresh screen into black
